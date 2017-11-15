@@ -1,0 +1,21 @@
+<app-layout>
+<@body>
+<h4>
+    Hello <strong>${input.name}</strong>
+</h4>
+<p>Welcome to ${input.viewEngine}</p>
+<ul>
+    <span style="color: ${color}"
+        for(color in input.colors | status-var=loop | separator=", ")>
+        ${loop.getIndex()+1} - ${color}
+    </span>
+</ul>
+<ul>
+    <li for(index, color in input.colors)>
+        ${index} -
+        <span style="color: ${color}">${color}</span>
+    </li>
+</ul>
+</@body>
+</app-layout>
+<browser-refresh enabled="true"/>
